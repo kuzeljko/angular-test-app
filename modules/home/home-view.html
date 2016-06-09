@@ -1,1 +1,9 @@
-<h1>this is home view</h1>
+<article ng-controller="homeController as vm">
+    <h2>List Items</h2>
+    <ul>
+        <li ng-repeat="item in vm.items">
+            <p>{{item.name}}</p>
+            <p>{{item.snippet}}</p>
+        </li>
+    </ul>
+</article>
