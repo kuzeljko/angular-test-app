@@ -1,19 +1,7 @@
 
-angular.module("learningApp").controller("homeController",  function(){
+angular.module("learningApp").controller("homeController",  function($http){
     vm = this;
-    console.log("controller home is alive");
-    vm.items = [
-        {
-        name: 'Nexus S',
-          snippet: 'Fast just got faster with Nexus S.'
-        }, 
-        {
-          name: 'Motorola XOOM with Wi-Fi',
-          snippet: 'The Next, Next Generation tablet.'
-        }, 
-        {
-          name: 'MOTOROLA XOOM',
-          snippet: 'The Next, Next Generation tablet.'
-        }
-    ];
+    $http.get('data/phones.json').then(function(response) {
+        vm.items = response.data;
+    });
 });

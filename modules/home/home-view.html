@@ -1,7 +1,8 @@
 <article ng-controller="homeController as vm">
     <h2>List Items</h2>
+    Search: <input ng-model="vm.query" />
     <ul>
-        <li ng-repeat="item in vm.items">
+        <li ng-repeat="item in vm.items | filter:vm.query">
             <p>{{item.name}}</p>
             <p>{{item.snippet}}</p>
         </li>
